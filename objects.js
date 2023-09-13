@@ -52,6 +52,12 @@ function deleteBook(e) {
     displayBooks();
 }
 
+function toggleRead(e) {
+    let i = e.target.dataset.index;
+    myLibrary[i].read = myLibrary[i].read ? false : true;
+    displayBooks();
+}
+
 function displayBooks() {
     let bookbox = document.getElementById("bookbox");
     bookbox.innerHTML = "";
@@ -61,14 +67,21 @@ function displayBooks() {
 
         let p = document.createElement("p");
         p.innerText = myLibrary[i].info();
+        // p.innerText = JSON.stringify(myLibrary[i]);
 
         let btnDelete = document.createElement("button");
         btnDelete.innerText = "Delete";
         btnDelete.setAttribute("data-index", i);
         btnDelete.addEventListener('click', deleteBook);
 
+        let btnToggleRead = document.createElement("button");
+        btnToggleRead.innerText = "Toggle Read Status";
+        btnToggleRead.setAttribute("data-index", i);
+        btnToggleRead.addEventListener('click', toggleRead);
+
         row.appendChild(p);
         row.appendChild(btnDelete);
+        row.appendChild(btnToggleRead);
         bookbox.appendChild(row);
     }
 }
