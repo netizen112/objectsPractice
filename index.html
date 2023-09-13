@@ -1,17 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Objects</title>
-    <script src="objects.js" defer ></script>
-</head>
-<body>
-    <button id="btnNewBook">New Book</button>
-    <div class="newBookForm">
-        
-    </div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Objects</title>
+        <script src="objects.js" defer></script>
+    </head>
+    <body>
+        <button id="btnNewBook">New Book</button>
+        <div class="newBookForm">
+            <dialog id="addNewBook">
+                <form method="dialog">
+                    <fieldset>
+                        <legend>New Book Details</legend>
+                        <label for="title"
+                            >Title <input type="text" name="title" id="title"
+                        /></label>
+                        <label for="author"
+                            >Author
+                            <input type="text" name="author" id="author"
+                        /></label>
+                        <label for="numPages"
+                            >Number of Pages
+                            <input type="number" name="numPages" id="numPages"
+                        /></label>
+                        <p>Have you read this book?</p>
+                        <label for="readStatusYes"
+                            >Yes<input
+                                type="radio"
+                                name="readStatus"
+                                id="readStatusYes"
+                        /></label>
+                        <label for="readStatusNo"
+                            >No<input
+                                type="radio"
+                                name="readStatus"
+                                id="readStatusNo"
+                                checked
+                        /></label>
+                        <!-- <input type="submit" value="Submit" /> -->
+                        <button type="submit" id="btnAddNewBookSubmit">Submit</button>
+                    </fieldset>
+                </form>
+            </dialog>
+        </div>
 
-    <!-- <div class="bookbox" id="bookbox"></div> -->
-</body>
+        <div class="bookbox" id="bookbox"></div>
+    </body>
 </html>
